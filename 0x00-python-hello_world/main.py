@@ -1,3 +1,2 @@
-""" _PRINT_
-"""
+#!/usr/bin/python3
 print("Best School")
