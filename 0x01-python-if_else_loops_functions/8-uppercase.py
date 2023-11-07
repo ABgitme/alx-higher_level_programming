@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def uppercase(str):
     for i, char in enumerate(str):
         if (ord(char) not in range(65, 91)) and (ord(char) in range(97, 123)):

@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def islower(c):
     aval = ord(c)
     if aval in range(97, 124):
