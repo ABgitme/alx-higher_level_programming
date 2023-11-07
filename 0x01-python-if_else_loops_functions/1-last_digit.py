@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 import random
-number = random.randint(-10000,10000)
+number = random.randint(-10000, 10000)
 if number < 0:
-    number = -1*number
-    lastdig = -1*(number % 10)
-    number = -1*number
+    number = -1 * number
+    lastdig = -1 * (number % 10)
+    number = -1 * number
 else:
     lastdig = number % 10
 if lastdig > 5:
