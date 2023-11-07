@@ -4,7 +4,7 @@ def new_in_list(my_list, idx, element):
         nw_list = list(my_list)
         if idx < 0:
             return nw_list
-        elif idx > len(my_list):
+        elif idx > len(my_list) - 1:
             return nw_list
         else:
             if idx == i:
