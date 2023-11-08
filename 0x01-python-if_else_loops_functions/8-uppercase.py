@@ -6,8 +6,3 @@ def uppercase(str):
         else:
             print(str[i], end='')
     print()
-
-
-
-
-uppercase('stop THIs 98')

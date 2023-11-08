@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 iteration = 0
 VAL = 122
+
+
 def add_subtract(VAL):
     if iteration == 0:
         return VAL
@@ -11,9 +13,7 @@ def add_subtract(VAL):
     return VAL
 
 
-
-
 while iteration < 26:
     VAL = add_subtract(VAL)
-    print(chr(VAL), end='')
+    print('{}'.format(chr(VAL)), end='')
     iteration += 1

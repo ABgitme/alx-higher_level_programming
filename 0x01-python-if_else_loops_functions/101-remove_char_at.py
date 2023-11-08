@@ -11,5 +11,3 @@ def remove_char_at(str, n):
         print(str[i], end='')
         i += 1
     print('')
-
-remove_char_at('Best school', 3)
