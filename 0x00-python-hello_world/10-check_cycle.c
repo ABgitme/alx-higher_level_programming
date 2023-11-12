@@ -14,7 +14,7 @@ int check_cycle(listint_t *list)
 	listint_t *fast_ptr = list;
 
 	/*If the list is empty, then there is no cycle.*/
-	if (list == NULL)
+	if (list == NULL || list->next == NULL)
 		return (0);
 	/*Move the two pointers through the list.*/
 	while (fast_ptr != NULL && fast_ptr->next != NULL)
