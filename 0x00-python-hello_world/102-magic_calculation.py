@@ -6,6 +6,6 @@ def magic_calculation(a, b):
         b (int): value2
 
     Returns:
-        int: a + a raised to b
+        int: 98 + a raised to b
     """
     return (98 + a ** b)
