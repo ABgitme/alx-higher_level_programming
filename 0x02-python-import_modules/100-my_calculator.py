@@ -8,7 +8,6 @@ if __name__ == "__main__":
     length = len(arg)
     if length != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        print(get_args())
         exit(1)
     else:
         if arg[2] in operators:
