@@ -4,7 +4,7 @@ if __name__ == "__main__":
     arg = []
     arg = get_args()
     length = len(arg)
-    if length == 0:
+    if length == 1:
         print("0 arguments.")
     else:
         if length > 2:
