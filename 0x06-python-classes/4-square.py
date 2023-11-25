@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+#!/usr/bin/python3
 """
 This class represents a square.
 """
@@ -32,3 +33,6 @@ class Square:
             int: The area of the square.
         """
         return self.__size * self.__size
+    @property
+    def size(self):
+        return self.__size
