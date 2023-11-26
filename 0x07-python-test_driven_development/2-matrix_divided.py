@@ -22,8 +22,8 @@ def matrix_divided(matrix, div):
     new_matrix = []
     row_lengths = []
     if matrix is None:
-        raise TypeError("matrix must be a matrix(list of lists)\
-                            of integers/floats")
+        raise TypeError("matrix must be a matrix(list of lists) "
+                        "of integers/floats")
     for row in matrix:
         row_lengths.append(len(row))
     if len(set(row_lengths)) != 1:
@@ -31,8 +31,8 @@ def matrix_divided(matrix, div):
     for row in matrix:
         for element in row:
             if not isinstance(element, int) and not isinstance(element, float):
-                raise TypeError("matrix must be a matrix (list of lists)\
-                        of integers/floats")
+                raise TypeError("matrix must be a matrix(list of lists) "
+                                "of integers/floats")
     if not isinstance(div, int) and not isinstance(div, float):
         raise TypeError("div must be a number")
     if div == 0:

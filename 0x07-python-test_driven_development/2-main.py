@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 matrix_divided = __import__('2-matrix_divided').matrix_divided
 
-matrix = [[1,2,3],[4, 'A', 6]]
+matrix = [[1,2,3],[4, 9, 'h']]
 print(matrix_divided(matrix, 3))
 print(matrix)
