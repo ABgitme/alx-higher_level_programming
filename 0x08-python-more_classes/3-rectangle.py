@@ -80,9 +80,3 @@ class Rectangle:
                 rectangle_str += '#'
             rectangle_str += '\n'
         return rectangle_str
-
-    def __repr__(self):
-        """
-        Returns a repr representation of the rectangle.
-        """
-        return f"<3-rectangle.Rectangle object at {hex(id(self))}>"
