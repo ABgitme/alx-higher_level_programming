@@ -1,5 +1,21 @@
 #!/usr/bin/python3
+""" a function that indents a text """
+
+
 def text_indentation(text):
+    """
+    Indents a text block according to the following rules:
+
+    * After each of the characters '.', ':', and '?' add two newlines.
+    * If the character following one of the
+        aforementioned characters is a space, ignore it.
+
+    Args:
+        text (str): The text to indent.
+
+    Raises:
+        TypeError: If `text` is not a string.
+    """
     if not isinstance(text, str) or text is None:
         raise TypeError("text must be a string")
     buff = []
