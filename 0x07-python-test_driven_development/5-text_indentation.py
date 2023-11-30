@@ -22,7 +22,7 @@ def text_indentation(text):
     j = 0
     for i, char in enumerate(text):
         if char in ['.', ':', '?']:
-            buff.append(char + "\n")
+            buff.append(char + "\n" + "\n")
         else:
             if text[i - 1] in ['.', ':', '?']:
                 j = 1
@@ -30,4 +30,4 @@ def text_indentation(text):
                 continue
             buff.append(char)
             j = 0
-    print("".join(buff))
+    print("".join(buff), end='')
