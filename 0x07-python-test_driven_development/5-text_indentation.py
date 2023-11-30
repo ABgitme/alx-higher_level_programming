@@ -16,13 +16,13 @@ def text_indentation(text):
     Raises:
         TypeError: If `text` is not a string.
     """
-    if not isinstance(text, str) or text is None:
+    if not isinstance(text, str) or (text is None):
         raise TypeError("text must be a string")
     buff = []
     j = 0
     for i, char in enumerate(text):
         if char in ['.', ':', '?']:
-            buff.append(char + "\n" + "\n")
+            buff.append(char + "\n")
         else:
             if text[i - 1] in ['.', ':', '?']:
                 j = 1
