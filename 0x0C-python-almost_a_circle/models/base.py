@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Defines a base model class."""
 import json
 import csv
 
@@ -16,7 +16,8 @@ class Base:
         Constructor for the Base class.
 
         Args:
-            id (int, optional): The unique identifier of the object. Defaults to None.
+            id (int, optional): The unique identifier
+                of the object. Defaults to None.
         """
         if id is not None:
             self.id = id
@@ -51,7 +52,8 @@ class Base:
 
         file_name = f"{cls.__name__}.json"
         with open(file_name, "w") as file:
-            json_string = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
+            json_string = cls.to_json_string(
+                [obj.to_dictionary() for obj in list_objs])
             file.write(json_string)
 
     @staticmethod
@@ -60,7 +62,8 @@ class Base:
         Returns the list represented by the JSON string.
 
         Args:
-            json_string (str): A JSON string representing a list of dictionaries.
+            json_string (str): A JSON string
+                representing a list of dictionaries.
 
         Returns:
             list: The list represented by the json_string.
@@ -77,7 +80,8 @@ class Base:
         Creates an instance of the class with all attributes set.
 
         Args:
-            dictionary (dict): A dictionary containing the attributes and their values.
+            dictionary (dict): A dictionary
+                containing the attributes and their values.
 
         Returns:
             Base: An instance of the class with all attributes set.
