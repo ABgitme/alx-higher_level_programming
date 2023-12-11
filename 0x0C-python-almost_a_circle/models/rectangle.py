@@ -117,27 +117,27 @@ class Rectangle(Base):
         """String representation of the rectangle."""
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
 
-    def update(self, *args):
-        """ Updates the attributes of the rectangle."""
-        if len(args) >= 1:
-            self.id = args[0]
-        if len(args) >= 2:
-            try:
-                self.width = args[1]
-            except (TypeError, ValueError):
-                pass
-        if len(args) >= 3:
-            try:
-                self.height = args[2]
-            except (TypeError, ValueError):
-                pass
-        if len(args) >= 4:
-            try:
-                self.x = args[3]
-            except (TypeError, ValueError):
-                pass
-        if len(args) >= 5:
-            try:
-                self.y = args[4]
-            except (TypeError, ValueError):
-                pass
+    def update(self, *args, **kwargs):
+        """Updates the attributes of the rectangle."""
+        if args:  # If args is not empty, skip kwargs
+            self.id = args[0] if len(args) >= 1 else self.id
+            self.width = args[1] if len(args) >= 2 else self.width
+            self.height = args[2] if len(args) >= 3 else self.height
+            self.x = args[3] if len(args) >= 4 else self.x
+            self.y = args[4] if len(args) >= 5 else self.y
+        else:  # Update attributes based on kwargs
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
+
+    def to_dictionary(self):
+        """
+        Returns the dictionary representation of the rectangle.
+        """
+        return {
+            "x": self.x,
+            "y": self.y,
+            "id": self.id,
+            "height": self.height,
+            "width": self.width,
+        }
