@@ -15,9 +15,12 @@ class Rectangle(Base):
         Args:
             width (int): The width of the rectangle.
             height (int): The height of the rectangle.
-            x (int, optional): The x coordinate of the rectangle. Defaults to 0.
-            y (int, optional): The y coordinate of the rectangle. Defaults to 0.
-            id (int, optional): The unique identifier of the object. Defaults to None.
+            x (int, optional):
+                The x coordinate of the rectangle. Defaults to 0.
+            y (int, optional):
+                The y coordinate of the rectangle. Defaults to 0.
+            id (int, optional):
+                The unique identifier of the object. Defaults to None.
         """
         super().__init__(id)
         if type(width) is not int:
@@ -117,7 +120,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """String representation of the rectangle."""
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return f"[Rectangle]\
+            ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
 
     def update(self, *args, **kwargs):
         """Updates the attributes of the rectangle."""
