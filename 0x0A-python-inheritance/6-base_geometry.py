@@ -8,7 +8,8 @@ operations and calculations.
 
 class BaseGeometry:
     """
-    BaseGeometry class provides a foundation for geometric operations and calculations.
+    BaseGeometry class provides a foundation
+    for geometric operations and calculations.
     """
 
     def area(self):
