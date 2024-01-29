@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Module for managing a list of items stored in a JSON file.
+"""
+
+
 import sys
 from os import path
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
