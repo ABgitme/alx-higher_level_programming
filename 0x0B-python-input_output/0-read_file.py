@@ -5,7 +5,6 @@ Module for reading the contents of files.
 This module provides the read_file() function, which allows you to read
 the entire content of a specified file and print it to the console.
 """
-import os
 
 
 def read_file(filename=""):
