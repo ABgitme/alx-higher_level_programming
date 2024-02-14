@@ -1,5 +1,15 @@
--- Select all rows from the mysql.db table
-SELECT *
--- Filter rows where the User column matches 'user_0d_1' or 'user_0d_2'
-FROM mysql.db
-WHERE User IN ('user_0d_1', 'user_0d_2');
+-- Check if necessary information_schema table exists in your MySQL version
+SELECT COUNT(*) AS table_exists
+FROM information_schema.user_grants;
+
+IF table_exists > 0 THEN
+    -- List privileges for user_0d_1
+    SELECT *
+    FROM information_schema.user_grants
+    WHERE user = 'user_0d_1' AND host = '%';
+    -- List privileges for user_0d_2
+    SELECT *
+    FROM information_schema.user_grants
+    WHERE user = 'user_0d_2' AND host = '%';
+END IF;
+
