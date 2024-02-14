@@ -1,4 +1,4 @@
--- Retrieve the titles of TV shows and their corresponding genres
+-- Retrieve the titles of TV shows and their corresponding Comedy
 SELECT t.title  -- Select the title from tv_shows
 FROM tv_shows t  -- Alias tv_shows table as t
 INNER JOIN tv_show_genres s ON t.id = s.show_id  -- Join tv_show_genres table as s based on show_id
