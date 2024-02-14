@@ -1,6 +1,8 @@
--- Extract table information from information_schema.tables
-SELECT COLUMN_NAME, COLUMN_TYPE, IS_NULLABLE, COLUMN_KEY, COLUMN_DEFAULT, EXTRA
--- Select specific column attributes for the table
+-- This line selects specific columns from the information_schema.columns table.
+SELECT COLUMN_NAME, DATA_TYPE, COLUMN_KEY, IS_NULLABLE, COLUMN_DEFAULT, EXTRA
+-- From the information_schema.columns table which contains various data dictionary information.
 FROM information_schema.columns
--- Filter the columns based on the database name and table name
-WHERE TABLE_SCHEMA = 'hbtn_0c_0' AND TABLE_NAME = 'first_table';
+-- Filter results to only include columns belonging to the database passed as an argument.
+WHERE TABLE_SCHEMA = DATABASE()
+-- Further filter to only include columns from the specified table named 'first_table'.
+AND TABLE_NAME = 'first_table';
