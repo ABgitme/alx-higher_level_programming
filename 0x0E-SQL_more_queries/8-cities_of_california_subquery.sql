@@ -1,17 +1,9 @@
--- Store database name as a variable for flexibility
-SET @database = $database;
-
--- Find California state's ID (handles multiple states with same name)
-SELECT id FROM @database.states WHERE name = 'California';
-
--- If California exists, filter and sort cities accordingly
-IF @@rowcount > 0 THEN
-  SELECT * FROM @database.cities
-  WHERE state_id IN (
-    SELECT id FROM @database.states WHERE name = 'California'
-  )
-  ORDER BY id ASC;
-ELSE
-  -- Handle the case where there is no California state
-  SELECT NULL AS id, NULL AS name;
-END IF;
+-- Select all cities from the cities table
+-- Filter cities based on the state_id obtained from the states table where the name is California
+-- The id of California state is obtained from the states table
+-- Cities are ordered in ascending order by cities.id
+SELECT cities.*
+FROM cities, states
+WHERE cities.state_id = states.id
+AND states.name = 'California'
+ORDER BY cities.id ASC;
