@@ -1,10 +1,8 @@
 -- Store database name as a variable
-SET @database = $database;
-
--- Select shows with at least one genre
-SELECT s.title, g.genre_id
-FROM @database.tv_shows AS s
-INNER JOIN @database.tv_show_genres AS g ON s.id = g.show_id
-GROUP BY s.title
-HAVING COUNT(g.genre_id) >= 1
-ORDER BY s.title ASC, g.genre_id ASC;
+SELECT 
+  tv_shows.title,
+  tv_show_genres.genre_id
+FROM $database.tv_shows
+INNER JOIN $database.tv_show_genres ON tv_shows.id = tv_show_genres.tv_show_id
+GROUP BY tv_shows.title, tv_show_genres.genre_id
+ORDER BY tv_shows.title ASC, tv_show_genres.genre_id ASC;
