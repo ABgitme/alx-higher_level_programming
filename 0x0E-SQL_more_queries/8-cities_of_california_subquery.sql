@@ -1,9 +1,8 @@
--- Select all cities from the cities table
--- Filter cities based on the state_id obtained from the states table where the name is California
--- The id of California state is obtained from the states table
--- Cities are ordered in ascending order by cities.id
-SELECT cities.*
-FROM cities, states
-WHERE cities.state_id = states.id
-AND states.name = 'California'
-ORDER BY cities.id ASC;
+-- Define a variable to store the database name
+SET @database = $database;
+-- Find the ID of the California state
+SELECT id FROM @database.states WHERE name = 'California';
+-- Use a subquery to filter cities in California
+SELECT * FROM @database.cities
+WHERE state_id = (SELECT id FROM @database.states WHERE name = 'California')
+ORDER BY id ASC;
