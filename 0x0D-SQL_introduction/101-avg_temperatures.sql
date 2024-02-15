@@ -1,5 +1,5 @@
 -- Select the city and calculate the average temperature (Fahrenheit) for each city
-SELECT city, AVG(temperature) AS avg_temp
+SELECT city, AVG(value) AS avg_temp
 -- Specify the table and database
 FROM temperatures
 -- Group the data by city
