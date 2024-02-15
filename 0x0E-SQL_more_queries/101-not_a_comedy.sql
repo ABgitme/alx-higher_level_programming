@@ -1,10 +1,10 @@
--- Retrieve the title of all shows that don't have the genre Comedy
-SELECT title
--- From the tv_shows table
-FROM tv_shows
--- Left join with the tv_show_genres table to check if the show has the Comedy genre
-LEFT JOIN tv_show_genres ON tv_shows.id = tv_show_genres.show_id AND tv_show_genres.genre_id IS NULL
--- Filter out the shows that have the Comedy genre
-WHERE tv_show_genres.genre_id IS NULL
--- Order the results in ascending order by the show title
-ORDER BY title;
+-- Retrieve distinct titles of shows that are not in the Comedy genre
+SELECT DISTINCT t.title
+FROM tv_shows AS t
+-- Left join with tv_show_genres to include all shows, even those without genres
+LEFT JOIN tv_show_genres AS s ON s.show_id = t.`id`
+-- Left join with tv_genres to check for shows in the Comedy genre
+LEFT JOIN tv_genres AS g ON g.id = s.genre_id
+-- Filter out shows that are in the Comedy genre
+WHERE g.name IS NULL OR g.name != 'Comedy'
+ORDER BY t.title;
