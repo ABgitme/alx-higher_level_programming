@@ -1,9 +1,9 @@
--- Select all cities from the cities table
--- Filter cities based on the state_id obtained from the states table where the name is California
--- The id of California state is obtained from the states table
--- Cities are ordered in ascending order by cities.id
-SELECT cities.*
-FROM cities, states
-WHERE cities.state_id = states.id
-AND states.name = 'California'
-ORDER BY cities.id ASC;
+-- Select the city ID and name from the cities table
+-- Join the cities and states tables based on the state_id and id columns, respectively
+-- Filter the rows to include only cities from the state of California
+-- Order the result set by the city ID in ascending order
+SELECT c.id, c.name
+FROM cities AS c
+JOIN states AS s ON c.state_id = s.id
+WHERE s.name = "California"
+ORDER BY c.id;
