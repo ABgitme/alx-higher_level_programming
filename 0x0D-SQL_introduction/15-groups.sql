@@ -5,4 +5,4 @@ FROM second_table
 -- Group records by score
 GROUP BY score
 -- Order the results by the number of records in descending order
-ORDER BY number_of_records DESC;
+ORDER BY number DESC;
