@@ -1,6 +1,6 @@
 -- Select score and name from the second_table table
 SELECT score, name
-FROM hbtn_0c_0.second_table
+FROM second_table
 -- Filter records where score is greater than or equal to 10
 WHERE score >= 10
 -- Order the records by score in descending order (top first)
