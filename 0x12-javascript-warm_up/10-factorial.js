@@ -5,20 +5,9 @@
  * @param {number} n - The integer for which to compute the factorial.
  * @returns {number} - The factorial of n.
  */
-const factorial = (n) => {
-  if (isNaN(n)) {
-    return 1;
-  }
+function factorial (n) {
+  return n === 0 || isNaN(n) ? 1 : n * factorial(n - 1);
+}
 
-  n = parseInt(n);
-
-  if (n === 0 || n === 1) {
-    return 1;
-  } else {
-    return n * factorial(n - 1);
-  }
-};
-
-const input = process.argv[2];
-const result = factorial(input);
-console.log(result);
+const input = Number(process.argv[2]); // Retrieves the number from command line argument
+console.log(factorial(input)); // Prints the factorial of the input number
