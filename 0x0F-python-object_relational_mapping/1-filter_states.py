@@ -25,9 +25,9 @@ import sys
 
 if __name__ == "__main__":
     # Check if correct number of arguments provided
-    if len(sys.argv) != 4:
-        print("Usage: {} username password database".format(sys.argv[0]))
-        sys.exit(1)
+    # if len(sys.argv) != 4:
+    #    print("Usage: {} username password database".format(sys.argv[0]))
+    #    sys.exit(1)
 
     # Get MySQL credentials from command line arguments
     username = sys.argv[1]
