@@ -16,7 +16,8 @@ Example:
     ./1-filter_states.py root root hbtn_0e_0_usa
 
 This script connects to a MySQL server running on localhost at port 3306,
-executes a SQL query to sort the results by state ID in ascending order,
+executes a SQL query to select states whose name starts with 'N',
+sorts the results by state ID in ascending order,
 and then prints the fetched rows.
 """
 import MySQLdb
@@ -45,8 +46,8 @@ if __name__ == "__main__":
     # Create cursor
     cursor = db.cursor()
 
-    # Execute SQL query to sort the results by state ID in ascending order
-    query = "SELECT * FROM states ORDER BY id ASC"
+    # Execute SQL query to select states starting with 'N'
+    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
     cursor.execute(query)
 
     # Fetch all the rows and print them
