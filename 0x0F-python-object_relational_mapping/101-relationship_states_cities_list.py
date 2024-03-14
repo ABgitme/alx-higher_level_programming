@@ -29,8 +29,8 @@ if __name__ == "__main__":
     states = session.query(State).order_by(State.id).all()
     # Iterate over State objects
     for state in states:
-        print(f"{state.id}: {state.name}")
+        print("{}: {}".format(state.id, state.name))
         # Iterate over City objects associated with each State
         for city in state.cities:
-            print(f"    {city.id}: {city.name}")
+            print("    {}: {}".format(city.id, city.name))
     session.close()
