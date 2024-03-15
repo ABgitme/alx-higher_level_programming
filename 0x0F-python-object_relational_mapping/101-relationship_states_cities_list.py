@@ -42,5 +42,5 @@ if __name__ == "__main__":
         print("{}: {}".format(state.id, state.name))
         # Iterate over City objects associated with each State
         for city in state.cities:
-            print("    {}: {}".format(city.id, city.name))
+            print("\t{}: {}".format(city.id, city.name))
     session.close()
