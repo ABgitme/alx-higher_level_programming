@@ -44,8 +44,8 @@ if __name__ == "__main__":
     california = State(name="California")
 
     # Create City object for San Francisco
-    san_francisco = City(name="San Francisco")
-    california.cities.append(san_francisco)
+    san_francisco = City(name="San Francisco", state=california)
+
     # Add State and City objects to session
     session.add(california)
     session.add(san_francisco)
