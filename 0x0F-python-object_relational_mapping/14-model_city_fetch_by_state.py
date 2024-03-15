@@ -1,4 +1,13 @@
 #!/usr/bin/python3
+"""
+This script queries and prints all city
+and state information from a MySQL database.
+
+It takes the following arguments:
+  - username: The username for the MySQL database.
+  - password: The password for the MySQL database.
+  - database: The name of the database containing the city and state tables.
+"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
