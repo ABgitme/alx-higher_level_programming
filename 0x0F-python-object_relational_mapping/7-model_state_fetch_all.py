@@ -1,4 +1,15 @@
 #!/usr/bin/python3
+"""
+This script queries a MySQL database for all states and prints them.
+
+It utilizes SQLAlchemy to connect to the database and retrieve
+data from the `State` model defined in the `model_state` module.
+
+The script expects three command-line arguments:
+- username: The username for accessing the MySQL database.
+- password: The password for accessing the MySQL database.
+- database: The name of the database containing the states table.
+"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
