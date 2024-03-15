@@ -1,4 +1,18 @@
 #!/usr/bin/python3
+"""
+This module provides functionality to connect
+to a MySQL database, create a new state record,
+and commit the changes to the database.
+
+It leverages SQLAlchemy to interact with the database
+and expects command-line arguments for
+database credentials and database name.
+
+Usage:
+python <script_name> <username>
+<password> <database_name> <state>
+
+"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
