@@ -1,4 +1,20 @@
 #!/usr/bin/python3
+"""
+This script queries and displays a list of cities
+along with their corresponding states from a MySQL database.
+
+It utilizes SQLAlchemy to connect to the database,
+define models (`State` and `City`), and perform queries.
+
+The script expects three command-line arguments:
+
+- username (MySQL username)
+- password (MySQL password)
+- database (Name of the MySQL database)
+
+It retrieves city data, orders them by ID, and prints each city's ID,
+name, and the name of its corresponding state.
+"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
