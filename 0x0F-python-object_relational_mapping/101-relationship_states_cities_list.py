@@ -10,10 +10,11 @@ The script expects three command-line arguments:
     3. Target database name
 """
 import sys
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 from relationship_state import Base, State
 # from relationship_city import City
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
 
 
 if __name__ == "__main__":
@@ -36,7 +37,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).all()
+    states = session.query(State)
     # Iterate over State objects
     for state in states:
         print("{}: {}".format(state.id, state.name))
