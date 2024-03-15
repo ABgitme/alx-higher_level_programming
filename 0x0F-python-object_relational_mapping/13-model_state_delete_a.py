@@ -1,4 +1,19 @@
 #!/usr/bin/python3
+"""
+This script deletes all states from a MySQL
+database whose names contain the letter 'a'.
+
+It utilizes the SQLAlchemy library to connect
+to a MySQL database and perform the deletion operation.
+
+**Usage:**
+
+python delete_states_containing_a.py <username> <password> <database>
+
+- `<username>`: The username for accessing the MySQL database.
+- `<password>`: The password for the provided username.
+- `<database>`: The name of the MySQL database containing the states table.
+"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
