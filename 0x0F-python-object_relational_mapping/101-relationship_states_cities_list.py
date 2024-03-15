@@ -1,4 +1,14 @@
 #!/usr/bin/python3
+"""
+This module establishes a connection to a MySQL database, retrieves all
+'State' objects, and prints their names along with the names of their
+associated 'City' objects.
+
+The script expects three command-line arguments:
+  1. MySQL username
+  2. MySQL password
+  3. Target database name
+"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
