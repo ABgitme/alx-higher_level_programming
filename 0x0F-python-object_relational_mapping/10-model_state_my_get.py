@@ -49,6 +49,6 @@ if __name__ == "__main__":
     if filtered:
         print("{}".format(filtered.id))
     else:
-        print("Nothing")
+        print("Not found")
 
     session.close()
