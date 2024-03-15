@@ -1,4 +1,14 @@
 #!/usr/bin/python3
+"""
+This module queries and prints states from a MySQL database containing 'a'
+
+It retrieves states whose names contain the letter 'a', orders them by their ID, and prints
+their ID and name in a formatted manner.
+
+To use this module, provide MySQL credentials and database name as command-line arguments:
+
+python3 this_module.py <username> <password> <database_name>
+"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
