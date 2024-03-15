@@ -53,10 +53,8 @@ if __name__ == "__main__":
     cursor.execute(query, (state_name,))
 
     # Fetch all the rows and print them
-    results = cursor.fetchone()
-    for row in results:
-        print(row)
-
+    results = cursor.fetchall()
+    print(", ".join(city[0] for city in results if city[0] is not None))
     # Close cursor and database connection
     cursor.close()
     db.close()
