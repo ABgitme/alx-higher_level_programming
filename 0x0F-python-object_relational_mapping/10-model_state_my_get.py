@@ -1,4 +1,22 @@
 #!/usr/bin/python3
+"""
+This script queries a MySQL database for a state based on a provided name.
+
+It utilizes SQLAlchemy to create an engine, a session, and perform the query.
+
+**Usage:**
+
+./script.py <username> <password> <database> <state_name>
+
+- `<username>`: MySQL username
+- `<password>`: MySQL password
+- `<database>`: Name of the MySQL database
+- `<state_name>`: Name of the state to search for
+
+**Output:**
+
+The script prints the ID of the state if found, or "Nothing" if not found.
+"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
