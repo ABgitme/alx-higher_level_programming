@@ -13,6 +13,7 @@ import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from relationship_state import Base, State
+from relationship_city import *
 
 
 if __name__ == "__main__":
@@ -41,5 +42,5 @@ if __name__ == "__main__":
         print("{}: {}".format(state.id, state.name))
         # Iterate over City objects associated with each State
         for city in state.cities:
-            print("\t{}: {}".format(city.id, city.name))
+            print("    {}: {}".format(city.id, city.name))
     session.close()
