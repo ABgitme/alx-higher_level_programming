@@ -34,7 +34,7 @@ if __name__ == "__main__":
 
     # Create session
     Session = sessionmaker(bind=engine)
-    session = Session()
+    session = Session(bind=engine)
 
     states = session.query(State).order_by(State.id)
     # Iterate over State objects
