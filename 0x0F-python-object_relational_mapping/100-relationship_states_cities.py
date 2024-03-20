@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This script creates a new state ("California") and a city ("San Francisco") 
+This script creates a new state ("California") and a city ("San Francisco")
 associated with that state in a MySQL database.
 
 It takes the following arguments:
@@ -9,9 +9,10 @@ It takes the following arguments:
 - password (str): MySQL password.
 - database (str): Name of the MySQL database.
 
-The script utilizes the SQLAlchemy library to connect to the database and 
-manages the database session. It leverages models defined in separate modules 
-(relationship_state.py and relationship_city.py) for representing states and cities.
+The script utilizes the SQLAlchemy library to connect to the database and
+manages the database session. It leverages models defined in separate modules
+(relationship_state.py and relationship_city.py)
+for representing states and cities.
 """
 import sys
 from sqlalchemy import create_engine
