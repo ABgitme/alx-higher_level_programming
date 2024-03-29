@@ -24,13 +24,18 @@ def matrix_mul(m_a, m_b):
         for element in rw:
             if not isinstance(element, (int, float)):
                 raise TypeError("m_a should contain only integers or floats")
-
     for rw in m_b:
         for element in rw:
             if not isinstance(element, (int, float)):
                 raise TypeError("m_b should contain only integers or floats")
     if len(m_a[0]) != len(m_b):
         raise ValueError("Matrices must have compatible dimensions.")
+    for i in range(len(m_a)):
+        if len(m_a[i]) != len(m_a[0]):
+            raise TypeError("each row of m_a must be of the same size")
+    for i in range(len(m_a)):
+        if len(m_a[i]) != len(m_a[0]):
+            raise TypeError("each row of m_b must be of the same size")
     result = []
     for i in range(len(m_a)):
         row = []
