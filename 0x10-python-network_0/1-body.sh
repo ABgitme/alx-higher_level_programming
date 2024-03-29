@@ -7,5 +7,5 @@ if [ $# -ne 1 ]; then
 fi
 
 # Send request to the URL and save the response body to a variable
-response=$(curl -sX GET $1 -L)
+response=$(curl -sX GET "$1" -L)
 echo "$response"

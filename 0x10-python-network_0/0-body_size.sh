@@ -7,13 +7,7 @@ if [ $# -ne 1 ]; then
 fi
 
 # Send request to the URL and save the response body to a temporary file
-response=$(curl -s -o /tmp/response_body "$1")
-
-# Check if curl command was successful
-if [ $? -ne 0 ]; then
-    echo "Error: Failed to fetch URL"
-    exit 1
-fi
+curl -s -o /tmp/response_body "$1"
 
 # Get the size of the response body file in bytes
 size=$(stat -c %s /tmp/response_body)
