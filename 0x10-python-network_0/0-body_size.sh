@@ -1,18 +1,6 @@
 #!/bin/bash
+response=$(curl -sI "$1")
 
-# Check if URL argument is provided
-if [ $# -ne 1 ]; then
-    echo "Usage: $0 <URL>"
-    exit 1
-fi
-
-# Send request to the URL and save the response body to a temporary file
-curl -s -o /tmp/response_body "$1"
-
-# Get the size of the response body file in bytes
-size=$(stat -c %s /tmp/response_body)
-
-echo "$size"
-
-# Clean up temporary file
-rm /tmp/response_body
+# Extract Content-Length from the response headers
+content_length=$(echo "$response" | grep -iE '^Content-Length:' | awk '{print $2}')
+echo "$content_length"
