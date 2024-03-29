@@ -38,4 +38,4 @@ if response.status_code == 200:
         author_name = commit['commit']['author']['name']
         print(f"{sha}: {author_name}")
 else:
-    print("Error accessing GitHub API. Status code:", response.status_code)
+    sys.exit(1)
