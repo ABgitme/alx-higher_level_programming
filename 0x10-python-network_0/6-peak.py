@@ -13,6 +13,8 @@ Note:
 - The algorithm used in the function has a time
 complexity of O(log n), where n is the number of elements in the list.
 """
+
+
 def find_peak(list_of_integers):
     """
     Finds a peak in a list of unsorted integers.
@@ -39,7 +41,7 @@ def find_peak(list_of_integers):
 
         # Check if mid is a peak
         if list_of_integers[mid] > list_of_integers[mid - 1] and\
-            list_of_integers[mid] > list_of_integers[mid + 1]:
+                list_of_integers[mid] > list_of_integers[mid + 1]:
             return list_of_integers[mid]
         elif list_of_integers[mid] < list_of_integers[mid + 1]:
             left = mid + 1
