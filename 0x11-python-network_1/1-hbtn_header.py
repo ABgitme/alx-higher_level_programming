@@ -35,9 +35,6 @@ import urllib.request
 import sys
 
 
-if len(sys.argv) != 2:
-    sys.exit(1)
-
 url = sys.argv[1]
 
 if __name__ == "__main__":
