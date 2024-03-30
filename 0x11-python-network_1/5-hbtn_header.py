@@ -30,12 +30,8 @@ if len(sys.argv) != 2:
     sys.exit(1)
 
 url = sys.argv[1]
-
-response = requests.get(url)
-
-x_request_id = response.headers.get('X-Request-Id')
-
-if x_request_id:
-    print(x_request_id)
-else:
-    print("X-Request-Id header not found in the response")
+if __name__ == "__main__":
+    response = requests.get(url)
+    x_request_id = response.headers.get('X-Request-Id')
+    if x_request_id:
+        print(x_request_id)
