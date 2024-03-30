@@ -41,12 +41,8 @@ if len(sys.argv) != 2:
 
 url = sys.argv[1]
 
-try:
+if __name__ == "__main__":
     with urllib.request.urlopen(url) as response:
         x_request_id = response.headers.get('X-Request-Id')
         if x_request_id:
             print(x_request_id)
-        else:
-            print("X-Request-Id header not found in the response")
-except urllib.error.URLError as e:
-    print("Error: Failed to fetch URL -", e)
