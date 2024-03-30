@@ -21,21 +21,21 @@ Requirements:
 import requests
 import sys
 
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        sys.exit(1)
 
-if len(sys.argv) != 3:
-    sys.exit(1)
+    repository_name = sys.argv[1]
+    owner_name = sys.argv[2]
+    url = f"https://api.github.com/repos/{owner_name}/{repository_name}/commits"
 
-repository_name = sys.argv[1]
-owner_name = sys.argv[2]
-url = f"https://api.github.com/repos/{owner_name}/{repository_name}/commits"
+    response = requests.get(url)
 
-response = requests.get(url)
-
-if response.status_code == 200:
-    commits = response.json()[:10]  # Get the 10 most recent commits
-    for commit in commits:
-        sha = commit['sha']
-        author_name = commit['commit']['author']['name']
-        print(f"{sha}: {author_name}")
-else:
-    sys.exit(1)
+    if response.status_code == 200:
+        commits = response.json()[:10]  # Get the 10 most recent commits
+        for commit in commits:
+            sha = commit['sha']
+            author_name = commit['commit']['author']['name']
+            print(f"{sha}: {author_name}")
+    else:
+        sys.exit(1)
