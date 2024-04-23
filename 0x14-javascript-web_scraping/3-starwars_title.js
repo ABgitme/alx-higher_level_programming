@@ -12,11 +12,7 @@ request.get(url, (error, response, body) => {
   if (error) {
     console.error(error);
   } else {
-    try {
-      const film = JSON.parse(body);
-      console.log(`Title: ${film.title}`);
-    } catch (parseError) {
-      console.error('Error parsing JSON:', parseError);
-    }
+    const film = JSON.parse(body);
+    console.log(`${film.title}`);
   }
 });
