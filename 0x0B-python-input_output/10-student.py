@@ -23,7 +23,8 @@ class Student:
     --------
     to_json(attrs=None):
         Returns a dictionary representation of the Student instance.
-        If attrs is a list of strings, only the specified attributes are retrieved.
+        If attrs is a list of strings,
+        only the specified attributes are retrieved.
         Otherwise, all attributes are retrieved.
     """
 
@@ -56,11 +57,15 @@ class Student:
         Returns:
         --------
         dict:
-            A dictionary containing the requested attributes of the student.
-            If attrs is None or not a list of strings, all attributes are returned.
+            A dictionary containing the requested
+            attributes of the student.
+            If attrs is None or not a list of strings,
+            all attributes are returned.
         """
-        if isinstance(attrs, list) and all(isinstance(attr, str) for attr in attrs):
-            return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
+        if isinstance(attrs, list) and all(isinstance(attr, str)
+                                           for attr in attrs):
+            return {attr: getattr(self, attr)
+                    for attr in attrs if hasattr(self, attr)}
         else:
             return {
                 'first_name': self.first_name,
